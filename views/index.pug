@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  a-scene(fog="type: linear; color: #AAA", embedded, style="z-index: 0 !important")
+    a-assets
+      video(id='texture', autoplay, loop='true', src='/images/hey.webm')
+    a-entity(geometry='primitive: box', scale='3 3 3', position='0 2 0', material='src: #texture')
+      a-animation(attribute='rotation', from='0 0 0', to='360 360 360', dur='5000', repeat='indefinite', ease='cubic')
+  script(type='text/javascript', src='/javascripts/play.js')
+  button(onclick='play()' style='z-index: 1 !important') toggle play
